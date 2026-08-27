@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -10,25 +10,17 @@ import { PortfolioSection } from '@/components/sections/PortfolioSection';
 import { WhyUsSection } from '@/components/sections/WhyUsSection';
 import { FaqSection } from '@/components/sections/FaqSection';
 import { CtaContactSection } from '@/components/sections/CtaContactSection';
+import { SITE_METADATA } from '@/data/site-content';
 
 export default function HomePage() {
-  const [prefilledService, setPrefilledService] = useState<string>('AI Video Production');
-  const [prefilledTask, setPrefilledTask] = useState<string>('');
-
   const handleSelectService = (serviceName: string) => {
-    setPrefilledService(serviceName);
-    const contactsEl = document.getElementById('contacts');
-    if (contactsEl) {
-      contactsEl.scrollIntoView({ behavior: 'smooth' });
-    }
+    const message = encodeURIComponent(`Здравствуйте! Хочу заказать услугу: ${serviceName}`);
+    window.open(`${SITE_METADATA.contacts.telegram}?text=${message}`, '_blank');
   };
 
   const handleSelectProject = (projectTitle: string) => {
-    setPrefilledTask(`Заказ проекта по образцу кейса: "${projectTitle}"`);
-    const contactsEl = document.getElementById('contacts');
-    if (contactsEl) {
-      contactsEl.scrollIntoView({ behavior: 'smooth' });
-    }
+    const message = encodeURIComponent(`Здравствуйте! Хочу заказать проект по образцу: "${projectTitle}"`);
+    window.open(`${SITE_METADATA.contacts.telegram}?text=${message}`, '_blank');
   };
 
   return (
@@ -55,11 +47,8 @@ export default function HomePage() {
         {/* 06. FAQ */}
         <FaqSection />
 
-        {/* 07. Contact & Order Form */}
-        <CtaContactSection
-          prefilledTask={prefilledTask}
-          prefilledService={prefilledService}
-        />
+        {/* 07. Contact Card (Telegram CTA) */}
+        <CtaContactSection />
       </main>
 
       {/* Footer */}

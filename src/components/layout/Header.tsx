@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Logo } from '@/components/ui/Logo';
 import { Button } from '@/components/ui/Button';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { SITE_METADATA } from '@/data/site-content';
 
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -55,7 +56,11 @@ export const Header: React.FC = () => {
 
         {/* Action Button */}
         <div className="hidden sm:flex items-center gap-3">
-          <a href="#contacts">
+          <a
+            href={SITE_METADATA.contacts.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button variant="primary" size="sm" icon={<ArrowUpRight className="w-3.5 h-3.5" />}>
               Обсудить проект
             </Button>
@@ -91,7 +96,12 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="pt-2">
-            <a href="#contacts" onClick={() => setMobileMenuOpen(false)}>
+            <a
+              href={SITE_METADATA.contacts.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <Button variant="primary" size="md" className="w-full justify-center text-xs" icon={<ArrowUpRight className="w-4 h-4" />}>
                 Обсудить проект
               </Button>

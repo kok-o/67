@@ -38,7 +38,11 @@ export const HeroSection: React.FC = () => {
 
         {/* Hero CTA Button */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
-          <a href="#contacts">
+          <a
+            href={SITE_METADATA.contacts.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               variant="primary"
               size="lg"
@@ -130,7 +134,12 @@ export const HeroSection: React.FC = () => {
                 <p className="text-xs sm:text-sm text-zinc-400 max-w-md mb-6">
                   Создаём кинематографичные визуальные решения для брендов, рекламы и медиа.
                 </p>
-                <a href="#contacts" onClick={() => setVideoModalOpen(false)}>
+                <a
+                  href={SITE_METADATA.contacts.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setVideoModalOpen(false)}
+                >
                   <Button variant="primary" size="md" icon={<ArrowRight className="w-4 h-4" />}>
                     Обсудить проект
                   </Button>

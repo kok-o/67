@@ -13,9 +13,10 @@ export const SITE_METADATA = {
   headline: 'Apex Agency',
   subheadline: 'Создаём кинематографичный визуальный контент: от рекламных роликов до предметных фотосессий и цифровых аватаров.',
   contacts: {
-    telegram: 'https://t.me/your_studio_handle',
+    telegram: 'https://t.me/apex_agencyy',
+    telegramHandle: '@apex_agencyy',
     whatsapp: 'https://wa.me/15550192834',
-    instagram: 'https://instagram.com/your_studio_handle',
+    instagram: 'https://instagram.com/apex_agencyy',
     email: 'hello@apex-agency.com',
     phoneDisplay: '+1 (555) 019-2834',
     city: 'Global / Remote'
