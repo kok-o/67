@@ -5,7 +5,7 @@ import { PORTFOLIO } from '@/data/site-content';
 import { PortfolioItem, ServiceCategory } from '@/types';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Play, Maximize2, X, ArrowUpRight } from 'lucide-react';
 
 interface PortfolioSectionProps {
@@ -28,7 +28,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
     ? PORTFOLIO
     : PORTFOLIO.filter(item => item.category === activeCategory);
 
-  const containerVars = {
+  const containerVars: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -38,7 +38,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
     },
   };
 
-  const itemVars = {
+  const itemVars: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } },
   };
